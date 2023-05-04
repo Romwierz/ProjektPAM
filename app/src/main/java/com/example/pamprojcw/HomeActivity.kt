@@ -1,21 +1,17 @@
 package com.example.pamprojcw
 
+import android.annotation.SuppressLint
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.Layout
-import android.view.View
-import android.widget.Adapter
-import android.widget.Button
+
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.appcompat.app.ActionBarDrawerToggle
+
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.pamprojcw.databinding.ActivityDrawerBinding
-import com.example.pamprojcw.databinding.ActivityHomeBinding
-import org.w3c.dom.Text
+
 
 class HomeActivity : AppCompatActivity() {
 
@@ -24,9 +20,10 @@ class HomeActivity : AppCompatActivity() {
   private lateinit var  drawerLayout : DrawerLayout
   private lateinit var  btnMenu : ImageView
   private lateinit var  recyclerView : RecyclerView
-      private val arrayList = ArrayList<String>()
+
     private lateinit var adapter : HomeAdapter
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -51,12 +48,12 @@ class HomeActivity : AppCompatActivity() {
         recyclerView.layoutManager
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
-        btnMenu.setOnClickListener(View.OnClickListener ()
+        btnMenu.setOnClickListener()
         {
-            fun onClick(v:View){
+
                 drawerLayout.openDrawer(GravityCompat.START)
-            }
-        })
+
+        }
 
     }
 

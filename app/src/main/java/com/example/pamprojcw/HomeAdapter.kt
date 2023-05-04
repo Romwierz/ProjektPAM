@@ -5,9 +5,8 @@ import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
-import androidx.annotation.NonNull
+
 import androidx.recyclerview.widget.RecyclerView
 
 class HomeAdapter :  RecyclerView.Adapter<HomeAdapter.ViewHolder>
@@ -37,25 +36,33 @@ class HomeAdapter :  RecyclerView.Adapter<HomeAdapter.ViewHolder>
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
       //set text on textView
-        holder.textView.text = arrayList[position]
-        holder.textView.setOnClickListener(View.OnClickListener() {
+        val position : Int = holder.adapterPosition
+        val item = arrayList[position]
+        holder.textView.text = item
+        holder.textView.setOnClickListener() {
 
 
-            fun onClick (v:View){
 
-                val position : Int = holder.adapterPosition
 
-                when(position) {
-                       0 ->
+
+
+                when(item) {
+                       "Main menu" ->
                         activity.startActivity(Intent(activity,HomeActivity::class.java )
                             .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
-                        1 ->
+                    "User preferences" ->
                             activity.startActivity(Intent(activity, UserPreferencesActivity::class.java )
                                 .setFlags(Intent.FLAG_ACTIVITY_NEW_TASK))
+                    "Settings"->
+                          TODO()
+                    "About"->
+                            TODO()
+                    "Logout"->
+                            TODO()
                 }
 
-            }
-        })
+
+        }
     }
 
     public class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

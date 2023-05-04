@@ -2,7 +2,7 @@ package com.example.pamprojcw
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+
 import android.widget.ImageView
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
@@ -24,13 +24,13 @@ class UserPreferencesActivity : AppCompatActivity() {
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = HomeAdapter(this, HomeActivity.arrayList)
-        btnMenu.setOnClickListener(View.OnClickListener() {
+        btnMenu.setOnClickListener() {
 
 
-            fun onClick(v : View){
-                drawerLayout.openDrawer(GravityCompat.START)
-            }
-        })
+
+                (GravityCompat.START)
+
+        }
 
     }
 
